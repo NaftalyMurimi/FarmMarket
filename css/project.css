@@ -1,0 +1,31 @@
+.soc-track { 
+background: ghostwhite;
+/*
+border:solid #ddd 2px; 
+border:solid #4e4e4e 2px; 
+*/
+border:solid #7b7996 2px; 
+padding: 24px; 
+border-radius: 22px; margin: 15px; width:300px; min-height:265px;
+text-align:center;
+transition: all 0.2s ease;
+}
+.s100:hover { background: #cc00cc; 
+	color: #fff; border-color: #cc00cc; cursor: pointer; }
+.hold{
+	display:flex;
+	justify-content: center; 
+	width:100%; 
+	max-width:1095px; 
+	margin: 0 auto; flex-wrap: wrap;
+	
+}
+
+img{
+	width:120px; height:120px;
+}
+@media only screen and (max-width: 790px) {
+	 .soc-track { 
+		height:310px;
+	}
+}
