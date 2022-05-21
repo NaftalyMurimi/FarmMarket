@@ -2,7 +2,9 @@
 session_start();
 error_reporting(0);
 include('../includes/dbconnect.php');
-
+if (strlen($_SESSION['sellerid']==0)) {
+  header('location:logout.php');
+  } else{}
   ?>
 <!DOCTYPE html>
 <html>
@@ -14,22 +16,8 @@ include('../includes/dbconnect.php');
 	<link href="../css/font-awesome.min.css" rel="stylesheet">
 	<link href="../css/datepicker3.css" rel="stylesheet">
 	<link href="../css/styles.css" rel="stylesheet">
-	<style type="text/css">
-		/*.rowupload{
-			background-image: url(../assets/upload.jpg);
-			height: 500px;
-			position: absolute;
-		}
-		.rowupload:hover{ display:none}*/
-		
-		
-	</style>
-	<!--Custom Font-->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-	<!--[if lt IE 9]>
-	<script src="js/html5shiv.js"></script>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+	
+	
 </head>
 <body>
 	<?php include_once('../includes/header.php');?>
@@ -44,88 +32,60 @@ include('../includes/dbconnect.php');
 				<li class="active">Seller</li>
 			</ol>
 		</div><!--/.row-->
-		
-		
-				
-		
-		<div class="row ">
+	<div class="row ">
 			<div class="col-lg-12 ">
-			
+		<hr/>
 				
-				
-				
-                
-				
-			
-				
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="modal-title" id="myModalLabel">         
+			<div class="panel panel-primary">
+			<div class="panel-heading">
+			Products List
+			</div>    
+			</div>
+			</h4>
+     </div>
+     <!-- /.panel-heading -->
+         <table class="table table-dark table-hover">
+             
+                <tr><th>S No.</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Due date</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Image</th>
+            <th>Action</th>
+                </tr>
+            
+<?php
+$userid=$_SESSION['sellerid'];
+$ret=mysqli_query($con,"select * from product where sellerid='$userid'");
+$cnt=1;
+while ($row=mysqli_fetch_array($ret)) {
 
-			
-				
-				
-				<hr/>
-				
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="modal-title" id="myModalLabel">         
-												<div class="panel panel-primary">
-													<div class="panel-heading">
-														Products List
-													</div>    
-												</div>
-											</h4>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                         
-                                            <th>Product</th>
-                                            <th>Quantity</th>
-                                            <th>Due date</th>
-                                            <th>Location</th>
-                                            
-                                            <th>Image</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-									
-                                        <tr>
-										<?php 
-											require '../includes/dbconnect.php';
-											$bool = false;
-											$query = $con->query("SELECT * FROM product ORDER BY id DESC");
-												while($row = $query->fetch_array()){
-													$id=$row['id'];
-										?>
-											
-											<td><?php echo $row ['product'];?></td>
-                                            <td><?php echo $row ['quantity'];?></td>
-                                            <td><?php echo $row ['date'];?></td>
-                                            <td><?php echo $row ['location'];?></td>
-                                            
-                                            <td width="50"><img src="<?php echo $row['image']; ?>" width="50" height="50" class="img-rounded"></td>
-                                            
-                                            <td style="text-align:center">
-											
-												 <a rel="tooltip"  title="Delete" id="<?php echo $candidate_id; ?>" href="#delete_user<?php echo $candidate_id; ?>" data-target="#delete_user<?php echo $candidate_id?>" data-toggle="modal"class="btn btn-danger btn-outline"><i class="fa fa-trash-o"></i> Delete</a>	
-											 <?php// include ('delete_candidate_modal.php'); ?>
-												  <a rel="tooltip"  title="Edit" id="<?php echo $row['candidate_id'] ?>" href="#edit_candidate<?php echo $row['candidate_id'] ?>"  data-toggle="modal"class="btn btn-success btn-outline"><i class="fa fa-pencil"></i> Edit</a>	
+?>
+             
+        <tr><td><?php echo $cnt;?></td>
+       	<td><?php echo $row ['product'];?></td>
+        <td><?php echo $row ['quantity'];?></td>
+        <td><?php echo $row ['date'];?></td>
+        <td><?php echo $row ['location'];?></td>
+        <td><?php echo $row ['contact'];?></td>
+        <td width="50"><img src="<?php echo $row['image']; ?>" width="50" height="50" class="img-rounded"></td>
+        <td style="text-align:center">
+		<a rel="tooltip"  title="Delete" id="<?php  ?>" href="#delete_user<?php echo $candidate_id; ?>" data-target="#delete_user<?php ?>" data-toggle="modal"class="btn btn-danger btn-outline"><i class="fa fa-trash-o"></i> Delete</a>	
+		<?php// include ('delete_candidate_modal.php'); ?>
+		<a rel="tooltip"  title="Edit" id="<?php?>" href="#edit_candidate<?php  ?>"  data-toggle="modal"class="btn btn-success btn-outline"><i class="fa fa-pencil"></i> Edit</a>	
 												
-											</td>
-														
-											    <?php 
-													
-													//require 'edit_candidate_modal.php';
-												?>
-                                        </tr>
-										
-                                       <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
+		</td>
+                </tr>
+<?php 
+$cnt=$cnt+1;
+}?>
+                 </table>
+
                             <!-- /.table-responsive -->
                             
                         </div>

@@ -15,6 +15,8 @@ if(isset($_POST['submit'])//&&$_FILES['userfile']['size']>0
  $quantity = $_POST['quantity'];
  $duedate = $_POST['duedate'];
  $location = $_POST['location'];
+ $price = $_POST['price'];
+ $contact = $_POST['contactphone'];
           $image= addslashes(file_get_contents($_FILES['image']['tmp_name']));
           $image_name= addslashes($_FILES['image']['name']);
           $image_size= getimagesize($_FILES['image']['tmp_name']);
@@ -23,7 +25,7 @@ if(isset($_POST['submit'])//&&$_FILES['userfile']['size']>0
           $upimage="../upload/" . $_FILES["image"]["name"];
           
           
-          $con->query("INSERT INTO `product`(`id`, `sellerid`, `product`, `quantity`, `date`, `location`, `image`) VALUES ('null','$userid','$product','$quantity','$duedate','$location','$upimage')")or die(mysql_error());
+          $con->query("INSERT INTO `product`(`id`, `sellerid`, `product`, `quantity`, `date`, `location`, `image`,`Price`, `contact`) VALUES ('null','$userid','$product','$quantity','$duedate','$location','$upimage','$price','$contact')")or die(mysql_error());
         $msg="You have submitted your product items successfully.";
         }
         else { 
@@ -97,15 +99,23 @@ if(isset($_POST['submit'])//&&$_FILES['userfile']['size']>0
   
 </div>
 <div class="col-md-6">
+  <label for="price" class="form-label">price:</label>
+  <input type="text" class="form-control"  name="price" placeholder="Per Bag.">
+ </div> 
+<div class="col-md-6">
   <label for="location" class="form-label">Location:</label>
-  <input type="text" class="form-control"  name="location" placeholder="Eg. kitui">
+  <input type="text" class="form-control"  name="location"placeholder="Eg. kitui">
   
 </div>
+
 <div class="col-md-6">
   <label for="date" class="form-label">Due date:</label>
   <input type="date" class="form-control"  name="duedate">
-  
 </div>
+<div class="col-md-6">
+  <label for="info" class="form-label">Contact Phone:</label>
+  <input type="number" class="form-control"  name="contactphone" placeholder="Eg. 254701234567">
+ </div>
 
    
    

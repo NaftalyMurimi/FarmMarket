@@ -80,16 +80,16 @@ if (strlen($_SESSION['sellerid']==0)) {
 		
 		<div class="row">
 			<div class="panel panel-default">
-					<div class="panel-heading"><marquee>Welcome To Student's Dashboard</marquee></div>
+					<div class="panel-heading"><marquee>Welcome To Seller's Dashboard</marquee></div>
 
 					<div class="panel-body">
 						<h4>Here are a list of the tasks you can perform</h4>
 						<ul>
-							<li>Submit Project for ranking</li>
-							<li> View  Already submitted projects  </li>
+							<li>Submit farm produce for selling</li>
+							<li> View  submitted profuce  </li>
 							
 							
-							<li> Change / update your personal profile  </li>
+							<li> Edit or delete farm produce  </li>
 						</ul>
 					</div>
 	    </div>
