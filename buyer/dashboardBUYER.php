@@ -1,46 +1,73 @@
-<!-- This is buyer's  dashboard -->
 <?php
 session_start();
 error_reporting(0);
 include('../includes/dbconnect.php');
-?>
+if (strlen($_SESSION['buyerid']==0)) {
+  header('location:../logout.php');
+  } else{
+
+  
+
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buyer</title>
-<link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Buyer's- Dashboard</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/datepicker3.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet">
     
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+   
 </head>
-<body style="background-color: #063146;">
-    <?php
-$uid=$_SESSION['buyerid'];
-$ret=mysqli_query($con,"select user_name from buyer where id='$uid'");
-$row=mysqli_fetch_array($ret);
-$name=$row['user_name'];
-
-?>
-   <nav id="top" class="navbar navbar-custom navbar-fixed-top" role="navigation" >
-      
-      <ol class="breadcrumb">
-        <li><a href="#">
-          <em class="fa fa-h-square"></em>
-        </a></li>
-        <li class="active">Welcome.. <i><?php echo $name; ?></i></li> 
-        <li style="float: right;"><a href="../logout.php"><em class="fa fa-user-md"></em>&nbsp Logout</a> </li>
-
-      </ol>
+<body>
+    
+    <?php include_once('../includes/header.php');?>
+    <?php include_once('../includes/sidebarBUYER.php');?>
     
         
-        <!-- /.container-fluid -->
-    </nav>
-    <div style="margin-top:30px;">
-        <!-- view all farmproduce -->
-    <?php include_once"../allPRODUCT.php"?>
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="background-color:beige;">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#">
+                    <em class="fa fa-home"></em>
+                </a></li>
+                <li class="active">Dashboard</li>
+            </ol>
+        </div><!--/.row-->
+        
+        <div class="row">
+            <div class="panel panel-default">
+                    <div class="panel-heading"><marquee>Welcome To Seller's Dashboard</marquee></div>
 
-    </div>
-    </body>
+                    <div class="panel-body">
+                        <h4>Click on the product image to order</h4>
+                       <?php include_once"../allPRODUCT.php"?>
+                    </div>
+        </div>
+        </div><!--/.row-->
+        
+        
+        
+        
+        
+        <!--/.row-->
+    </div>  <!--/.main-->
+    <?php include_once('../includes/footer.php');?>
+    <script src="../js/jquery-1.11.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/chart.min.js"></script>
+    <script src="../js/chart-data.js"></script>
+    <script src="../js/easypiechart.js"></script>
+    <script src="../js/easypiechart-data.js"></script>
+    <script src="../js/bootstrap-datepicker.js"></script>
+    <script src="../js/custom.js"></script>
+    
+        
+</body>
 </html>
+<?php } ?>

@@ -73,7 +73,7 @@
       	<button type="button" class="btn btn-info"><a href="buyer/login.php">Buyer</a></button> &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       	<button type="button" class="btn btn-info"><a href="seller/login.php">Seller</a></button>
       	&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      	<button type="button" class="btn btn-warning"><a href="">Admin</a></button>
+      	<button type="button" class="btn btn-warning"><a href="admin/login.php">Admin</a></button>
      
       </div>
       <div class="modal-footer">

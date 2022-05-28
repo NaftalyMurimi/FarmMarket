@@ -31,7 +31,7 @@ border:solid #4e4e4e 2px;
 */
 border:solid #7b7996 2px; 
 padding: 24px; 
-border-radius: 22px; margin: 15px; width:300px; height:300px;
+border-radius: 12px; margin: 15px; width:230px; height:230px;
 text-align:center;
 transition: all 0.2s ease;
 }
@@ -55,7 +55,7 @@ transition: all 0.2s ease;
 .s200:hover h6 { color: #fff; }
 .sh{
     font-weight: bold;
-    font-size: 18px;
+    font-size: 10px;
     float: left;
 }
 
@@ -86,8 +86,8 @@ transition: all 0.2s ease;
                 <p><span class="sh">Due date:</span> <?php echo $row ['date'];?></p>
                 <p><span class="sh">Location:</span> <?php echo $row ['location'];?></p>
               
-                <img src="<?php echo $row['image']; ?>" width="100" height="100" class="img-rounded"><br>
-                <i><span class="sh"><a href="https://api.whatsapp.com/send?phone=254.<?php echo $row ['contact'];?>&text=Hi">Whatsapp</a></span></i>
+                
+                <i><span class="sh"><a href="https://api.whatsapp.com/send?phone=254.<?php echo $row ['contact'];?>&text=Hi" target='_blank'><img src="<?php echo $row['image']; ?>" width="90" height="70" class="img-rounded"></a></span></i>
 
 </div>
 <?php
