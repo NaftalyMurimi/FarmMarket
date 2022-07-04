@@ -14,7 +14,7 @@
     </style>
   
 </head>
-<body>
+<body class="bg-light">
     <!-- Navigation bar -->
     <?php include_once('includes/nav.php');?>
 
@@ -30,7 +30,11 @@
             <div class="display-4">Digital Farm</div>
             <div class="display-6 text-muted">Farming made easier</div>
           </h1>
-          <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, dignissimos?</p>
+          <p class="lead my-4 text-muted">
+            <b>SMART FARMING MISSION</b>
+            <br>
+
+          Marketing in potatoes business in a challenge we have to close the gap between the farmer and middlemen (brokers). Most of the times farmers have no choice on how to sell their produce they have no say the just go with what the brokers are offering. Farmer also need some updated market trends daily so that they can break the off from colonialism from the brokers. </p>
           
         </div>
         

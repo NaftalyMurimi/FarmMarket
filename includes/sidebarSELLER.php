@@ -31,13 +31,8 @@ $name=$row['user_name'];
              <li class=""><a href="additems.php"><em class="fa fa-calendar">&nbsp;</em>Add products</a></li>        
            <li class=""><a href="products.php"><em class="fa fa-calendar">&nbsp;</em>Products</a></li>
            
-           
- 
-
-
-
-            
-            <li><a href="user-profile.php"><em class="fa fa-user">&nbsp;</em>My Profile</a></li>
+           <li class=""><a href="adverts.php"><em class="fa fa-calendar">&nbsp;</em>Adverts</a></li>
+           <li><a href="user-profile.php"><em class="fa fa-user">&nbsp;</em>My Profile</a></li>
             <li><a href="../logout.php"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 
         </ul>

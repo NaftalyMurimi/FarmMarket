@@ -45,7 +45,7 @@ if (strlen($_SESSION['sellerid']==0)) {
 		
 		<div class="row">
 			<div class="panel panel-default">
-					<div class="panel-heading"><marquee>Welcome To Seller's Dashboard</marquee></div>
+					<div class="panel-heading"><marqee>Welcome To Seller's Dashboard</marquee></div>
 
 					<div class="panel-body">
 						<h4>Here are a list of the tasks you can perform</h4>

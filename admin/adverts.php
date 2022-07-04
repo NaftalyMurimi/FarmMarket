@@ -72,7 +72,7 @@ if(isset($_POST['submit'])//&&$_FILES['userfile']['size']>0
     <div class="row ">
       <div class="col-lg-12 ">
       
-        
+      <hr/>
         
         <div class="panel panel-default  ">
           <div class="rowupload">

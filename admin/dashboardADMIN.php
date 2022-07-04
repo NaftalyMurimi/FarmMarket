@@ -30,7 +30,7 @@ if (strlen($_SESSION['adminid']==0)) {
 	<?php include_once('../includes/sidebarADMIN.php');?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
-		<div class="row">
+	<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#">
 					<em class="fa fa-home"></em>
@@ -38,22 +38,28 @@ if (strlen($_SESSION['adminid']==0)) {
 				<li class="active">Dashboard</li>
 			</ol>
 		</div><!--/.row-->
-		
-		<div class="row">
-			<div class="panel panel-default">
-					<div class="panel-heading"><marquee>Welcome To Admin Dashboard</marquee></div>
-
-					<div class="panel-body">
-						<h4>Here are a list of the tasks you can perform</h4>
+	<div class="row ">
+			<div class="col-lg-12 ">
+		<hr/>
+				
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="modal-title" id="myModalLabel">         
+			<div class="panel panel-primary">
+			<div class="panel-heading">
+			Registered Buyer List
+			</div>    
+			<h4>Here are a list of the tasks you can perform</h4>
 						<ul>
 							<li>Submit Project sample to guide students</li>
 							<li> View  students projects  </li>
 							<li> Grade/ Rank submitted students projects</li>
 							<li> Change / update your personal profile  </li>
 						</ul>
-					</div>
-	    </div>
-		</div><!--/.row-->
+			</div>
+			</h4>
+			
+     </div>
 		
 		
 		

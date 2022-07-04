@@ -14,7 +14,7 @@ if (strlen($_SESSION['buyerid']==0)) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Buyer's- Dashboard</title>
+    <title>Buyer</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/datepicker3.css" rel="stylesheet">
@@ -30,28 +30,22 @@ if (strlen($_SESSION['buyerid']==0)) {
     <?php include_once('../includes/sidebarBUYER.php');?>
     
         
-        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="background-color:beige;">
-        <div class="row">
-            <ol class="breadcrumb">
-                <li><a href="#">
-                    <em class="fa fa-home"></em>
-                </a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </div><!--/.row-->
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+  
         
         <div class="row">
             <div class="panel panel-default">
-                    <div class="panel-heading"><marquee>Welcome To Seller's Dashboard</marquee></div>
+                    <div class="panel-heading"><marqee>Welcome To Seller's Dashboard</marquee></div>
 
                     <div class="panel-body">
-                        <h4>Click on the product image to order</h4>
+                        <h4 class="text-center">Click on the product image to order Via whatsApp</h4>
                        <?php include_once"../allPRODUCT.php"?>
                     </div>
         </div>
         </div><!--/.row-->
         
-        
+        </div>
+        </div><!--/.row-->
         
         
         

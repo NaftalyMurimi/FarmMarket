@@ -27,11 +27,11 @@ $name=$row['user_name'];
         <div class="divider"></div>
         
         <ul class="nav menu">
-            <li class="active"><a href="dashboardLECTURER.php"><em class="fa fa-dashboard">&nbsp;</em> Produts</a></li>
+            <li class="active"><a href="products.php"><em class="fa fa-dashboard">&nbsp;</em> Produts</a></li>
                      
            <li class=""><a href="adverts.php"><em class="fa fa-calendar">&nbsp;</em>Adverts</a></li>
 
-           <li class=""><a href="#"><em class="fa fa-calendar">&nbsp;</em>View </a></li>
+           
            
  
 
